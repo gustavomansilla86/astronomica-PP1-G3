@@ -1,11 +1,23 @@
 {
-  "config": "{\"version\":\"5.59\",\"themeCollection\":{\"baseTheme\":{\"name\":\"CY24SU10\",\"version\":\"5.64\",\"type\":2}},\"activeSectionIndex\":0,\"defaultDrillFilterOtherVisuals\":true,\"settings\":{\"useNewFilterPaneExperience\":true,\"allowChangeFilterTypes\":true,\"useStylableVisualContainerHeader\":true,\"queryLimitOption\":6,\"exportDataMode\":1,\"useDefaultAggregateDisplayName\":true},\"objects\":{\"section\":[{\"properties\":{\"verticalAlignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Top'\"}}}}}]}}",
+  "config": "{\"version\":\"5.59\",\"themeCollection\":{\"baseTheme\":{\"name\":\"CY24SU10\",\"version\":\"5.64\",\"type\":2},\"customTheme\":{\"name\":\"AccessibleCityPark\",\"version\":\"5.64\",\"type\":2}},\"activeSectionIndex\":1,\"bookmarks\":[{\"displayName\":\"RESTABLECER PAG1\",\"name\":\"c9a266b8c40b687725d5\",\"explorationState\":{\"version\":\"1.3\",\"activeSection\":\"382cec9cbe0b9e12b8a8\",\"sections\":{\"382cec9cbe0b9e12b8a8\":{\"visualContainers\":{\"5b3668fa7d2a5545ad15\":{\"filters\":{\"byExpr\":[{\"type\":\"Advanced\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"MAP\"}},\"Property\":\"Ml\"}},\"howCreated\":0},{\"type\":\"Advanced\",\"expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"MAP\"}},\"Property\":\"ID\"}},\"Function\":5}},\"howCreated\":0}]},\"singleVisual\":{\"visualType\":\"clusteredBarChart\",\"objects\":{},\"orderBy\":[{\"Direction\":2,\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"MAP\"}},\"Property\":\"ID\"}},\"Function\":5}}}],\"activeProjections\":{\"Category\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"MAP\"}},\"Property\":\"Ml\"}}]}}},\"915301a83483a68d9797\":{\"singleVisual\":{\"visualType\":\"actionButton\",\"objects\":{}}},\"cdc825e3c64c64eff584\":{\"filters\":{\"byExpr\":[{\"type\":\"Advanced\",\"expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"MAP\"}},\"Property\":\"Ml\"}},\"Function\":0}},\"howCreated\":0},{\"type\":\"Advanced\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"MAP\"}},\"Property\":\"Latitud\"}},\"howCreated\":0},{\"type\":\"Advanced\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"MAP\"}},\"Property\":\"Longitud\"}},\"howCreated\":0}]},\"singleVisual\":{\"visualType\":\"map\",\"objects\":{}}},\"cdd10328ce128c05e05a\":{\"singleVisual\":{\"visualType\":\"textbox\",\"objects\":{}}},\"33122e248d00a92054b4\":{\"filters\":{\"byExpr\":[{\"type\":\"Advanced\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"MAP\"}},\"Property\":\"Ml\"}},\"howCreated\":0}]},\"singleVisual\":{\"visualType\":\"slicer\",\"objects\":{\"merge\":{\"data\":[{\"properties\":{\"mode\":{\"expr\":{\"Literal\":{\"Value\":\"'Basic'\"}}}}}]}},\"activeProjections\":{\"Values\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"MAP\"}},\"Property\":\"Ml\"}}]}}},\"30fc4f610e56210d1196\":{\"singleVisual\":{\"visualType\":\"actionButton\",\"objects\":{}}}}}},\"objects\":{\"merge\":{\"outspacePane\":[{\"properties\":{\"expanded\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}},\"options\":{\"targetVisualNames\":[\"30fc4f610e56210d1196\"]}}],\"defaultDrillFilterOtherVisuals\":true,\"linguisticSchemaSyncVersion\":2,\"settings\":{\"useNewFilterPaneExperience\":true,\"allowChangeFilterTypes\":true,\"useStylableVisualContainerHeader\":true,\"queryLimitOption\":6,\"exportDataMode\":1,\"useDefaultAggregateDisplayName\":true,\"useEnhancedTooltips\":true,\"filterPaneHiddenInEditMode\":true},\"objects\":{\"section\":[{\"properties\":{\"verticalAlignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Top'\"}}}}}],\"outspacePane\":[{\"properties\":{\"expanded\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}",
   "layoutOptimization": 0,
+  "pods": [
+    {
+      "boundSection": "382cec9cbe0b9e12b8a8",
+      "config": "{\"acceptsFilterContext\":1}",
+      "name": "a1fb05c87963755da3e0"
+    }
+  ],
   "resourcePackages": [
     {
       "resourcePackage": {
         "disabled": false,
         "items": [
+          {
+            "name": "AccessibleCityPark",
+            "path": "BuiltInThemes/AccessibleCityPark.json",
+            "type": 201
+          },
           {
             "name": "CY24SU10",
             "path": "BaseThemes/CY24SU10.json",
@@ -15,18 +27,117 @@
         "name": "SharedResources",
         "type": 2
       }
+    },
+    {
+      "resourcePackage": {
+        "disabled": false,
+        "items": [
+          {
+            "name": "estacion3504353974644303.jpg",
+            "path": "estacion3504353974644303.jpg",
+            "type": 100
+          }
+        ],
+        "name": "RegisteredResources",
+        "type": 1
+      }
     }
   ],
   "sections": [
     {
       "config": "{}",
-      "displayName": "Página 1",
+      "displayName": "CATALOGO",
       "displayOption": 1,
       "filters": "[]",
       "height": 720.00,
       "name": "382cec9cbe0b9e12b8a8",
-      "visualContainers": [],
+      "ordinal": 1,
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"30fc4f610e56210d1196\",\"layouts\":[{\"id\":0,\"position\":{\"x\":28.903225806451612,\"y\":638.6236559139785,\"z\":3002,\"width\":39.913978494623656,\"height\":44.043010752688176}}],\"singleVisual\":{\"visualType\":\"actionButton\",\"drillFilterOtherVisuals\":true,\"objects\":{\"icon\":[{\"properties\":{\"shapeType\":{\"expr\":{\"Literal\":{\"Value\":\"'reset'\"}}}},\"selector\":{\"id\":\"default\"}}]},\"vcObjects\":{\"visualLink\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"type\":{\"expr\":{\"Literal\":{\"Value\":\"'Bookmark'\"}}},\"bookmark\":{\"expr\":{\"Literal\":{\"Value\":\"'c9a266b8c40b687725d5'\"}}}}}]}},\"howCreated\":\"InsertVisualButton\"}",
+          "filters": "[]",
+          "height": 44.04,
+          "width": 39.91,
+          "x": 28.90,
+          "y": 638.62,
+          "z": 3002.00
+        },
+        {
+          "config": "{\"name\":\"33122e248d00a92054b4\",\"layouts\":[{\"id\":0,\"position\":{\"x\":495.48387096774195,\"y\":546.4086021505376,\"z\":3001,\"width\":784.516129032258,\"height\":158.27956989247312,\"tabOrder\":3001}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"MAP.Ml\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"m\",\"Entity\":\"MAP\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Ml\"},\"Name\":\"MAP.Ml\",\"NativeReferenceName\":\"Ml\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"data\":[{\"properties\":{\"mode\":{\"expr\":{\"Literal\":{\"Value\":\"'Basic'\"}}}}}],\"general\":[{\"properties\":{\"orientation\":{\"expr\":{\"Literal\":{\"Value\":\"1D\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 158.28,
+          "width": 784.52,
+          "x": 495.48,
+          "y": 546.41,
+          "z": 3001.00
+        },
+        {
+          "config": "{\"name\":\"5b3668fa7d2a5545ad15\",\"layouts\":[{\"id\":0,\"position\":{\"x\":792.7741935483871,\"y\":0,\"z\":2000,\"width\":487.2258064516129,\"height\":546.4086021505376,\"tabOrder\":3000}}],\"singleVisual\":{\"visualType\":\"clusteredBarChart\",\"projections\":{\"Category\":[{\"queryRef\":\"MAP.Ml\",\"active\":true}],\"Y\":[{\"queryRef\":\"CountNonNull(MAP.ID)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"m\",\"Entity\":\"MAP\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Ml\"},\"Name\":\"MAP.Ml\",\"NativeReferenceName\":\"Suma de Ml\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"ID\"}},\"Function\":5},\"Name\":\"CountNonNull(MAP.ID)\",\"NativeReferenceName\":\"ID\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"ID\"}},\"Function\":5}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"legend\":[{\"properties\":{\"showGradientLegend\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}},\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]},\"vcObjects\":{\"background\":[{\"properties\":{\"color\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":0,\"Percent\":-0.3}}}}},\"transparency\":{\"expr\":{\"Literal\":{\"Value\":\"44D\"}}}}}],\"border\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"radius\":{\"expr\":{\"Literal\":{\"Value\":\"23D\"}}}}}],\"dropShadow\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"preset\":{\"expr\":{\"Literal\":{\"Value\":\"'BottomRight'\"}}},\"angle\":{\"expr\":{\"Literal\":{\"Value\":\"180L\"}}},\"shadowDistance\":{\"expr\":{\"Literal\":{\"Value\":\"10L\"}}},\"shadowBlur\":{\"expr\":{\"Literal\":{\"Value\":\"10L\"}}},\"shadowSpread\":{\"expr\":{\"Literal\":{\"Value\":\"3L\"}}},\"transparency\":{\"expr\":{\"Literal\":{\"Value\":\"70L\"}}}}}]}}}",
+          "height": 546.41,
+          "width": 487.23,
+          "x": 792.77,
+          "y": 0.00,
+          "z": 2000.00
+        },
+        {
+          "config": "{\"name\":\"915301a83483a68d9797\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":0,\"width\":100,\"height\":40,\"z\":1000,\"tabOrder\":2000}}],\"singleVisual\":{\"visualType\":\"actionButton\",\"drillFilterOtherVisuals\":true,\"objects\":{\"icon\":[{\"properties\":{\"shapeType\":{\"expr\":{\"Literal\":{\"Value\":\"'back'\"}}}},\"selector\":{\"id\":\"default\"}}]},\"vcObjects\":{\"visualLink\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"type\":{\"expr\":{\"Literal\":{\"Value\":\"'Back'\"}}}}}]}},\"howCreated\":\"InsertVisualButton\"}",
+          "filters": "[]",
+          "height": 40.00,
+          "width": 100.00,
+          "x": 0.00,
+          "y": 0.00,
+          "z": 1000.00
+        },
+        {
+          "config": "{\"name\":\"cdc825e3c64c64eff584\",\"layouts\":[{\"id\":0,\"position\":{\"x\":9.634408602150538,\"y\":0,\"z\":0,\"width\":783.1397849462365,\"height\":525.763440860215,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"map\",\"projections\":{\"Size\":[{\"queryRef\":\"Sum(MAP.Ml)\"}],\"Y\":[{\"queryRef\":\"MAP.Latitud\"}],\"X\":[{\"queryRef\":\"MAP.Longitud\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"m\",\"Entity\":\"MAP\",\"Type\":0}],\"Select\":[{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Ml\"}},\"Function\":0},\"Name\":\"Sum(MAP.Ml)\",\"NativeReferenceName\":\"Suma de Ml\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Latitud\"},\"Name\":\"MAP.Latitud\",\"NativeReferenceName\":\"Latitud\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Longitud\"},\"Name\":\"MAP.Longitud\",\"NativeReferenceName\":\"Longitud\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"dataPoint\":[{\"properties\":{\"fillRule\":{\"linearGradient2\":{\"min\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'minColor'\"}}}},\"max\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'maxColor'\"}}}},\"nullColoringStrategy\":{\"strategy\":{\"expr\":{\"Literal\":{\"Value\":\"'asZero'\"}}}}}}}},{\"properties\":{\"fill\":{\"solid\":{\"color\":{\"expr\":{\"FillRule\":{\"Input\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"MAP\"}},\"Property\":\"Ml\"}},\"Function\":0}},\"FillRule\":{\"linearGradient2\":{\"min\":{\"color\":{\"Literal\":{\"Value\":\"'#FFFFFF'\"}}},\"max\":{\"color\":{\"Literal\":{\"Value\":\"'#FB0101'\"}}},\"nullColoringStrategy\":{\"strategy\":{\"Literal\":{\"Value\":\"'asZero'\"}}}}}}}}}}},\"selector\":{\"data\":[{\"dataViewWildcard\":{\"matchingOption\":1}}]}}],\"categoryLabels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"legend\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"mapStyles\":[{\"properties\":{\"showLabels\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"mapTheme\":{\"expr\":{\"Literal\":{\"Value\":\"'aerial'\"}}}}}],\"bubbles\":[{\"properties\":{\"bubbleSize\":{\"expr\":{\"Literal\":{\"Value\":\"-20L\"}}}}}]},\"vcObjects\":{\"visualHeader\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 525.76,
+          "width": 783.14,
+          "x": 9.63,
+          "y": 0.00,
+          "z": 0.00
+        },
+        {
+          "config": "{\"name\":\"cdd10328ce128c05e05a\",\"layouts\":[{\"id\":0,\"position\":{\"x\":22.021505376344088,\"y\":546.4086021505376,\"z\":3000,\"width\":473.4623655913978,\"height\":79.82795698924731,\"tabOrder\":1000}}],\"singleVisual\":{\"visualType\":\"textbox\",\"drillFilterOtherVisuals\":true,\"objects\":{\"general\":[{\"properties\":{\"paragraphs\":[{\"textRuns\":[{\"value\":\"DETECCION DE SISMOS\",\"textStyle\":{\"fontWeight\":\"bold\",\"fontFamily\":\"Arial Unicode MS\",\"fontStyle\":\"italic\",\"fontSize\":\"28pt\"}}],\"horizontalTextAlignment\":\"center\"}]}}]},\"vcObjects\":{\"background\":[{\"properties\":{\"transparency\":{\"expr\":{\"Literal\":{\"Value\":\"38D\"}}},\"color\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":0,\"Percent\":-0.3}}}}}}}],\"border\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"color\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":0,\"Percent\":-0.3}}}}},\"radius\":{\"expr\":{\"Literal\":{\"Value\":\"16D\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 79.83,
+          "width": 473.46,
+          "x": 22.02,
+          "y": 546.41,
+          "z": 3000.00
+        }
+      ],
+      "width": 1280.00
+    },
+    {
+      "config": "{}",
+      "displayName": "INICIO",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 720.00,
+      "name": "9315541de5ac7404e0ba",
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"0fc418f05c5d7dd08e52\",\"layouts\":[{\"id\":0,\"position\":{\"x\":387.1698113207547,\"y\":274.4150943396226,\"z\":1,\"width\":726.7924528301886,\"height\":65.20754716981132}}],\"singleVisual\":{\"visualType\":\"pageNavigator\",\"drillFilterOtherVisuals\":true},\"howCreated\":\"InsertVisualButton\"}",
+          "filters": "[]",
+          "height": 65.21,
+          "width": 726.79,
+          "x": 387.17,
+          "y": 274.42,
+          "z": 1.00
+        },
+        {
+          "config": "{\"name\":\"7dce6a06c87fc82c0939\",\"layouts\":[{\"id\":0,\"position\":{\"x\":9.50943396226415,\"y\":0,\"z\":0,\"width\":377.66037735849056,\"height\":377.66037735849056,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"image\",\"drillFilterOtherVisuals\":true,\"objects\":{\"general\":[{\"properties\":{\"imageUrl\":{\"expr\":{\"ResourcePackageItem\":{\"PackageName\":\"RegisteredResources\",\"PackageType\":1,\"ItemName\":\"estacion3504353974644303.jpg\"}}}}}]}},\"howCreated\":\"InsertVisualButton\"}",
+          "filters": "[]",
+          "height": 377.66,
+          "width": 377.66,
+          "x": 9.51,
+          "y": 0.00,
+          "z": 0.00
+        }
+      ],
       "width": 1280.00
     }
-  ]
+  ],
+  "theme": "AccessibleCityPark"
 }
