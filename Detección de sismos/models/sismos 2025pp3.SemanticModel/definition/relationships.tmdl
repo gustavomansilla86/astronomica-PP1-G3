@@ -1,0 +1,5 @@
+relationship d462699a-cfb9-4c12-887d-039448309d9a
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'TRVA 201502 E N Z_datos_eventos_detectados'.'timestamp.1'
+	toColumn: LocalDateTable_8b4f9e76-853d-4d37-9089-c9e083ab2ca8.Date
+

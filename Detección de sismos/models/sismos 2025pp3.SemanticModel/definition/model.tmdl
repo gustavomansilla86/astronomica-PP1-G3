@@ -12,9 +12,12 @@ annotation PBIDesktopVersion = 2.143.1204.0 (25.05)+23c84aace645781dd62b8a26eb04
 
 annotation __PBI_TimeIntelligenceEnabled = 1
 
-annotation PBI_QueryOrder = ["MAP"]
+annotation PBI_QueryOrder = ["MAP","TRVA 201502 E N Z_datos_eventos_detectados"]
 
 ref table MAP
+ref table 'TRVA 201502 E N Z_datos_eventos_detectados'
+ref table DateTableTemplate_c9046d2b-46b5-4cc2-aa58-05269308a6d8
+ref table LocalDateTable_8b4f9e76-853d-4d37-9089-c9e083ab2ca8
 
 ref cultureInfo es-AR
 
