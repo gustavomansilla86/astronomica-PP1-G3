@@ -8,8 +8,6 @@ table MAP
 		summarizeBy: none
 		sourceColumn: ID
 
-		changedProperty = DataType
-
 		annotation SummarizationSetBy = Automatic
 
 	column Año
@@ -101,10 +99,8 @@ table MAP
 		dataType: double
 		formatString: 0
 		lineageTag: d4a8cf4c-d9a3-49cd-810e-11a65d3ebd3a
-		summarizeBy: sum
+		summarizeBy: none
 		sourceColumn: Ml
-
-		changedProperty = DataType
 
 		annotation SummarizationSetBy = User
 

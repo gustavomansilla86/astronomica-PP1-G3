@@ -19,17 +19,17 @@
             "height": 300,
             "width": 234
           },
-          "zIndex": 0
+          "zIndex": 1
         },
         {
           "location": {
             "x": 284,
-            "y": 2
+            "y": 0
           },
-          "nodeIndex": "TRVA 201502 E N Z_datos_eventos_detectados",
-          "nodeLineageTag": "24233d64-e12c-4230-9ac3-c447d3aac078",
+          "nodeIndex": "datos_eventos_detectados (2)",
+          "nodeLineageTag": "d45dbb30-7060-4e5c-888d-b9fd518f1d83",
           "size": {
-            "height": 296,
+            "height": 300,
             "width": 234
           },
           "zIndex": 0

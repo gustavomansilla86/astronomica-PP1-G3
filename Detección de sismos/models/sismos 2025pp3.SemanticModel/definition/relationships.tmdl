@@ -1,5 +1,10 @@
-relationship d462699a-cfb9-4c12-887d-039448309d9a
+relationship 188aae75-91a1-4619-8a4c-2f0ab63a2ca7
 	joinOnDateBehavior: datePartOnly
-	fromColumn: 'TRVA 201502 E N Z_datos_eventos_detectados'.'timestamp.1'
-	toColumn: LocalDateTable_8b4f9e76-853d-4d37-9089-c9e083ab2ca8.Date
+	fromColumn: 'datos_eventos_detectados (2)'.Fecha
+	toColumn: LocalDateTable_4934af68-47c1-40aa-8675-a7e742c6df8a.Date
+
+relationship d149d949-49bb-4b35-bf60-2b9f3b38a8e2
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'datos_eventos_detectados (2)'.Fin_Evento
+	toColumn: LocalDateTable_be5ab121-b0de-44c2-9468-74dfc4d8153e.Date
 
