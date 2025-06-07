@@ -1,0 +1,152 @@
+table datos_eventos_detectados
+	lineageTag: c6c74fb7-32b6-493f-b72c-80acfd0adf25
+
+	column Fecha_Evento
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: e1c18ac2-f8a5-478e-b7de-b6c58915cba6
+		summarizeBy: none
+		sourceColumn: Fecha_Evento
+
+		variation Variación
+			isDefault
+			relationship: c12d10cc-085b-4bf9-802f-91fea02d76a6
+			defaultHierarchy: LocalDateTable_a911268e-2867-4688-99d9-c31b725e959c.'Jerarquía de fechas'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Hora_Inicio_Evento
+		dataType: dateTime
+		formatString: Long Time
+		lineageTag: bd1b83a8-5aa0-4d12-9ac1-2d74a2af6821
+		summarizeBy: none
+		sourceColumn: Hora_Inicio_Evento
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Time
+
+	column Hora_Fin_Evento
+		dataType: dateTime
+		formatString: Long Time
+		lineageTag: f88e0c3e-9623-402f-8a3e-2dfe6699171f
+		summarizeBy: none
+		sourceColumn: Hora_Fin_Evento
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Time
+
+	column Duracion_Evento_s
+		dataType: int64
+		formatString: 0
+		lineageTag: 5396470a-30ef-4974-adf4-5da92db694ec
+		summarizeBy: sum
+		sourceColumn: Duracion_Evento_s
+
+		annotation SummarizationSetBy = Automatic
+
+	column Max_Amplitud_Filtrada
+		dataType: int64
+		formatString: 0
+		lineageTag: 5c720fb8-48dd-4db6-a681-0cad0b2a8909
+		summarizeBy: sum
+		sourceColumn: Max_Amplitud_Filtrada
+
+		annotation SummarizationSetBy = Automatic
+
+	column Ml_Calculada_Simplificada
+		dataType: int64
+		formatString: 0
+		lineageTag: f06d04e5-981b-4367-b729-9da82ee0ad76
+		summarizeBy: sum
+		sourceColumn: Ml_Calculada_Simplificada
+
+		annotation SummarizationSetBy = Automatic
+
+	column Fecha_Lectura
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: f7c807d2-f872-45ad-91f2-90056982c9eb
+		summarizeBy: none
+		sourceColumn: Fecha_Lectura
+
+		variation Variación
+			isDefault
+			relationship: 228b710a-0bce-4637-80c9-5cefd2078b95
+			defaultHierarchy: LocalDateTable_40bf73de-f960-47b6-9aa1-7237fac38e09.'Jerarquía de fechas'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Hora_Lectura
+		dataType: dateTime
+		formatString: Long Time
+		lineageTag: 1cc918ce-4fc9-447e-8b19-555bc99d1af7
+		summarizeBy: none
+		sourceColumn: Hora_Lectura
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Time
+
+	column E
+		dataType: int64
+		formatString: 0
+		lineageTag: 66ced85c-73cb-4d84-89ac-145479cf5043
+		summarizeBy: sum
+		sourceColumn: E
+
+		annotation SummarizationSetBy = Automatic
+
+	column N
+		dataType: int64
+		formatString: 0
+		lineageTag: 7a7c62bf-cd18-4997-8450-3362026bd2f6
+		summarizeBy: sum
+		sourceColumn: N
+
+		annotation SummarizationSetBy = Automatic
+
+	column Z
+		dataType: int64
+		formatString: 0
+		lineageTag: 24c4f466-bbac-4ca4-811f-c0b9a71d3ee5
+		summarizeBy: sum
+		sourceColumn: Z
+
+		annotation SummarizationSetBy = Automatic
+
+	column Magnitude
+		dataType: int64
+		formatString: 0
+		lineageTag: dc626992-84d6-4032-85e4-169163c1e854
+		summarizeBy: sum
+		sourceColumn: Magnitude
+
+		annotation SummarizationSetBy = Automatic
+
+	column Magnitude_Filtered
+		dataType: int64
+		formatString: 0
+		lineageTag: ab0301ad-70fe-4729-949d-0c001b45dc6c
+		summarizeBy: sum
+		sourceColumn: Magnitude_Filtered
+
+		annotation SummarizationSetBy = Automatic
+
+	partition datos_eventos_detectados = m
+		mode: import
+		source =
+				let
+				    Origen = Csv.Document(File.Contents("F:\gustavo\Desktop\PracticasProfecionalizantes_1_2025\datos_eventos_detectados.csv"),[Delimiter=",", Columns=13, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+				    #"Encabezados promovidos" = Table.PromoteHeaders(Origen, [PromoteAllScalars=true]),
+				    #"Tipo cambiado" = Table.TransformColumnTypes(#"Encabezados promovidos",{{"Fecha_Evento", type date}, {"Hora_Inicio_Evento", type time}, {"Hora_Fin_Evento", type time}, {"Duracion_Evento_s", Int64.Type}, {"Max_Amplitud_Filtrada", Int64.Type}, {"Ml_Calculada_Simplificada", Int64.Type}, {"Fecha_Lectura", type date}, {"Hora_Lectura", type time}, {"E", Int64.Type}, {"N", Int64.Type}, {"Z", Int64.Type}, {"Magnitude", Int64.Type}, {"Magnitude_Filtered", Int64.Type}})
+				in
+				    #"Tipo cambiado"
+
+	annotation PBI_ResultType = Table
+

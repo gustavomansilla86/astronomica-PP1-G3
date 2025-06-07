@@ -8,17 +8,19 @@ model Model
 
 annotation PBI_ProTooling = ["DevMode"]
 
-annotation PBIDesktopVersion = 2.143.1204.0 (25.05)+23c84aace645781dd62b8a26eb0418c7e6a84b72
+annotation PBIDesktopVersion = 2.143.1378.0 (25.05)+4e1de9c957866bc5336e0d250838314aa54ff3a8
 
 annotation __PBI_TimeIntelligenceEnabled = 1
 
-annotation PBI_QueryOrder = ["MAP","datos_eventos_detectados (2)"]
+annotation PBI_QueryOrder = ["datos_eventos_detectados (2)","Historico","datos_eventos_detectados"]
 
-ref table MAP
 ref table 'datos_eventos_detectados (2)'
-ref table DateTableTemplate_d6f810dd-b83d-4c99-937a-eccf2261b97b
-ref table LocalDateTable_4934af68-47c1-40aa-8675-a7e742c6df8a
-ref table LocalDateTable_be5ab121-b0de-44c2-9468-74dfc4d8153e
+ref table Historico
+ref table DateTableTemplate_882dc378-f864-439b-9be8-5467ccc7d7b6
+ref table LocalDateTable_cf7b02b4-4344-437f-ad6b-4d09070cf857
+ref table datos_eventos_detectados
+ref table LocalDateTable_a911268e-2867-4688-99d9-c31b725e959c
+ref table LocalDateTable_40bf73de-f960-47b6-9aa1-7237fac38e09
 
 ref cultureInfo es-AR
 

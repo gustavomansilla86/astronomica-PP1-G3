@@ -4,23 +4,10 @@
     {
       "ordinal": 0,
       "scrollPosition": {
-        "x": 0,
+        "x": 39,
         "y": 0
       },
       "nodes": [
-        {
-          "location": {
-            "x": 0,
-            "y": 0
-          },
-          "nodeIndex": "MAP",
-          "nodeLineageTag": "96c0369c-293c-4cf3-9497-e7d69b1c397b",
-          "size": {
-            "height": 300,
-            "width": 234
-          },
-          "zIndex": 1
-        },
         {
           "location": {
             "x": 284,
@@ -28,6 +15,31 @@
           },
           "nodeIndex": "datos_eventos_detectados (2)",
           "nodeLineageTag": "d45dbb30-7060-4e5c-888d-b9fd518f1d83",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 568,
+            "y": 0
+          },
+          "nodeIndex": "Historico",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 568,
+            "y": 0
+          },
+          "nodeIndex": "datos_eventos_detectados",
+          "nodeLineageTag": "c6c74fb7-32b6-493f-b72c-80acfd0adf25",
           "size": {
             "height": 300,
             "width": 234

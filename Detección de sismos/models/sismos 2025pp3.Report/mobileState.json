@@ -1,0 +1,5 @@
+{
+  "objectId": "",
+  "type": 4,
+  "explorationState": "{\"version\":\"1.8\",\"activeSection\":\"\",\"sections\":{\"382cec9cbe0b9e12b8a8\":{\"visualContainers\":{\"cdd10328ce128c05e05a\":{\"singleVisual\":{\"visualType\":\"textbox\",\"mobileObjects\":{\"general\":[{\"properties\":{\"paragraphs\":[{\"textRuns\":[{\"value\":\"DETECCION DE\",\"textStyle\":{\"fontWeight\":\"bold\",\"fontFamily\":\"Arial Unicode MS\",\"fontStyle\":\"italic\",\"fontSize\":\"11pt\"}},{\"value\":\" \",\"textStyle\":{\"fontWeight\":\"bold\",\"fontFamily\":\"Arial Unicode MS\",\"fontStyle\":\"italic\",\"fontSize\":\"28pt\"}},{\"value\":\"SISMOS\",\"textStyle\":{\"fontWeight\":\"bold\",\"fontFamily\":\"Arial Unicode MS\",\"fontStyle\":\"italic\",\"fontSize\":\"11pt\"}}],\"horizontalTextAlignment\":\"center\"},{\"textRuns\":[{\"value\":\"Hasta la actualidad\",\"textStyle\":{\"fontWeight\":\"bold\",\"fontFamily\":\"Arial Unicode MS\",\"fontStyle\":\"italic\",\"fontSize\":\"11pt\"}}],\"horizontalTextAlignment\":\"center\"}]}}]}}}}}}}"
+}

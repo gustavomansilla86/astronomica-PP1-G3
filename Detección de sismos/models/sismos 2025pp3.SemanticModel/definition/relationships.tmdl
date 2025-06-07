@@ -1,10 +1,15 @@
-relationship 188aae75-91a1-4619-8a4c-2f0ab63a2ca7
+relationship 8131d3a8-d6c0-4d48-8bec-516aa1b8185a
 	joinOnDateBehavior: datePartOnly
-	fromColumn: 'datos_eventos_detectados (2)'.Fecha
-	toColumn: LocalDateTable_4934af68-47c1-40aa-8675-a7e742c6df8a.Date
+	fromColumn: Historico.Fecha_UTC
+	toColumn: LocalDateTable_cf7b02b4-4344-437f-ad6b-4d09070cf857.Date
 
-relationship d149d949-49bb-4b35-bf60-2b9f3b38a8e2
+relationship c12d10cc-085b-4bf9-802f-91fea02d76a6
 	joinOnDateBehavior: datePartOnly
-	fromColumn: 'datos_eventos_detectados (2)'.Fin_Evento
-	toColumn: LocalDateTable_be5ab121-b0de-44c2-9468-74dfc4d8153e.Date
+	fromColumn: datos_eventos_detectados.Fecha_Evento
+	toColumn: LocalDateTable_a911268e-2867-4688-99d9-c31b725e959c.Date
+
+relationship 228b710a-0bce-4637-80c9-5cefd2078b95
+	joinOnDateBehavior: datePartOnly
+	fromColumn: datos_eventos_detectados.Fecha_Lectura
+	toColumn: LocalDateTable_40bf73de-f960-47b6-9aa1-7237fac38e09.Date
 

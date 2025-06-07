@@ -1,0 +1,145 @@
+table Historico
+	lineageTag: e286ecc0-b3a2-47ab-9b69-15a6798f27d7
+
+	measure total_eventos_significantes = ```
+			COUNT('Historico'[Tipo_Magnitud]) 
+			```
+		formatString: 0
+		lineageTag: feff83d6-0718-4e4f-b232-2fda877d79cb
+
+	column Fecha_UTC
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 9a57b6fc-a495-4197-a675-fe25d311b127
+		summarizeBy: none
+		sourceColumn: Fecha_UTC
+
+		variation Variación
+			isDefault
+			relationship: 8131d3a8-d6c0-4d48-8bec-516aa1b8185a
+			defaultHierarchy: LocalDateTable_cf7b02b4-4344-437f-ad6b-4d09070cf857.'Jerarquía de fechas'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Hora_UTC
+		dataType: dateTime
+		formatString: Long Time
+		lineageTag: 509c3843-aef2-4243-8d4e-620dd0da1041
+		summarizeBy: none
+		sourceColumn: Hora_UTC
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Time
+
+	column Latitud
+		dataType: double
+		lineageTag: 56f81679-803b-4add-b97b-40297e31dab2
+		dataCategory: Latitude
+		summarizeBy: none
+		sourceColumn: Latitud
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Longitud
+		dataType: double
+		lineageTag: 8fb7ee1f-01a6-41a2-a2c8-66e49d109e8b
+		dataCategory: Longitude
+		summarizeBy: none
+		sourceColumn: Longitud
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Profundidad_km
+		dataType: int64
+		formatString: 0
+		lineageTag: d8d5dba3-9b9c-4139-a593-75c25728ebfa
+		summarizeBy: sum
+		sourceColumn: Profundidad_km
+
+		annotation SummarizationSetBy = Automatic
+
+	column Magnitud
+		dataType: int64
+		formatString: 0
+		lineageTag: 5fa04259-96b4-4ebd-b154-0a1e2b5e5cd9
+		summarizeBy: sum
+		sourceColumn: Magnitud
+
+		annotation SummarizationSetBy = Automatic
+
+	column Tipo_Magnitud
+		dataType: string
+		lineageTag: c02362a9-c630-4c29-98aa-1bb7f2b450b3
+		summarizeBy: none
+		sourceColumn: Tipo_Magnitud
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'R.Latitud'
+		dataType: double
+		lineageTag: b667e900-5b2b-4280-9134-9ee7d646da2b
+		dataCategory: Latitude
+		summarizeBy: none
+		sourceColumn: R.Latitud
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'R.Longitud'
+		dataType: double
+		lineageTag: ef4337c3-c568-4820-a594-2216a2acd900
+		dataCategory: Longitude
+		summarizeBy: sum
+		sourceColumn: R.Longitud
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'R.Magnitud'
+		dataType: int64
+		formatString: 0
+		lineageTag: 012a54e8-5f57-45d0-a52e-28ad776516b2
+		summarizeBy: none
+		sourceColumn: R.Magnitud
+
+		annotation SummarizationSetBy = User
+
+	partition Historico = m
+		mode: import
+		source =
+				let
+				    Origen = Python.Execute("import obspy#(lf)from obspy.clients.fdsn import Client#(lf)from obspy import UTCDateTime#(lf)import pandas as pd#(lf)from datetime import datetime#(lf)#(lf)# --- Parámetros de búsqueda ---#(lf)lat_centro = -53.79    # Río Grande#(lf)lon_centro = -67.75#(lf)radio_km = 1000        # Radio en kilómetros#(lf)#(lf)start_date = UTCDateTime(""1949-01-01"")#(lf)end_date = UTCDateTime(datetime.utcnow())  # Fecha actual automática#(lf)min_magnitude = 2.0#(lf)#(lf)client = Client(""USGS"")#(lf)#(lf)try:#(lf)    catalog = client.get_events(#(lf)        starttime=start_date,#(lf)        endtime=end_date,#(lf)        latitude=lat_centro,#(lf)        longitude=lon_centro,#(lf)        maxradius=radio_km / 111.0,  # Conversión km → grados#(lf)        minmagnitude=min_magnitude,#(lf)        orderby='time'#(lf)    )#(lf)#(lf)    sismo_data = []#(lf)    for event in catalog:#(lf)        origin = event.origins[0]#(lf)        magnitude = event.magnitudes[0]#(lf)#(lf)        sismo_data.append({#(lf)            'Fecha_UTC': origin.time.date,#(lf)            'Hora_UTC': origin.time.time,#(lf)            'Latitud': round(origin.latitude, 4),#(lf)            'Longitud': round(origin.longitude, 4),#(lf)            'Profundidad_km': round(origin.depth / 1000, 1) if origin.depth else None,#(lf)            'Magnitud': round(magnitude.mag, 1) if magnitude.mag else None,#(lf)            'Tipo_Magnitud': magnitude.magnitude_type if magnitude.magnitude_type else 'N/A',#(lf)            'Id_Evento': event.resource_id.id#(lf)        })#(lf)#(lf)    dataset = pd.DataFrame(sismo_data)#(lf)#(lf)except Exception as e:#(lf)    dataset = pd.DataFrame([{'Error': str(e)}])"),
+				    dataset1 = Origen{[Name="dataset"]}[Value],
+				    #"Tipo cambiado" = Table.TransformColumnTypes(dataset1,{{"Fecha_UTC", type date}, {"Hora_UTC", type time}, {"Latitud", Int64.Type}, {"Longitud", Int64.Type}, {"Profundidad_km", Int64.Type}, {"Magnitud", Int64.Type}, {"Tipo_Magnitud", type text}, {"Id_Evento", type text}}),
+				    #"Personalizada agregada" = Table.AddColumn(#"Tipo cambiado", "R", each Table.TransformColumns(
+				    #"Tipo cambiado",
+				    {
+				        {"Latitud", each _ / 10000, type number},
+				        {"Longitud", each _ / 10000, type number},
+				        {"Magnitud", each _ / 10, type number}
+				    }
+				)),
+				    #"Se expandió R" = Table.ExpandTableColumn(#"Personalizada agregada", "R", {"Latitud", "Longitud", "Magnitud"}, {"R.Latitud", "R.Longitud", "R.Magnitud"}),
+				    #"Filas filtradas" = Table.SelectRows(#"Se expandió R", each true),
+				    #"Tipo cambiado1" = Table.TransformColumnTypes(#"Filas filtradas",{{"R.Latitud", type number}, {"R.Longitud", type number}, {"R.Magnitud", Int64.Type}}),
+				    #"Columnas quitadas" = Table.RemoveColumns(#"Tipo cambiado1",{"Id_Evento"})
+				in
+				    #"Columnas quitadas"
+
+	annotation PBI_NavigationStepName = Navegación
+
+	annotation PBI_ResultType = Table
+
