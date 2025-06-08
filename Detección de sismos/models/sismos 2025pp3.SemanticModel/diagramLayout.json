@@ -10,11 +10,10 @@
       "nodes": [
         {
           "location": {
-            "x": 284,
+            "x": 568,
             "y": 0
           },
-          "nodeIndex": "datos_eventos_detectados (2)",
-          "nodeLineageTag": "d45dbb30-7060-4e5c-888d-b9fd518f1d83",
+          "nodeIndex": "Historico",
           "size": {
             "height": 300,
             "width": 234
@@ -23,10 +22,11 @@
         },
         {
           "location": {
-            "x": 568,
+            "x": 284,
             "y": 0
           },
-          "nodeIndex": "Historico",
+          "nodeIndex": "datos_eventos_detectados",
+          "nodeLineageTag": "b85e1b07-27c5-479c-8187-4e8d48918b3f",
           "size": {
             "height": 300,
             "width": 234

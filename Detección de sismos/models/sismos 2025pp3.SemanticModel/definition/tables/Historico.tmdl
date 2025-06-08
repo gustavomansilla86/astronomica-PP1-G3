@@ -1,9 +1,32 @@
 table Historico
 	lineageTag: 93119546-1c13-4023-b0ad-da8f8f703b4b
 
-	measure 'conteo_ eventos' = COUNT(Historico[Id_Evento])
+	measure 'conteo_ eventos' = COUNT(Historico[Índice])
 		formatString: 0
 		lineageTag: 08176c39-7295-4904-a3af-ec01f9c8f966
+
+	measure Detalles_Evento_1 =
+			
+			VAR IndexEncontrado = 1
+			VAR Fecha = CALCULATE(SELECTEDVALUE('Historico'[Fecha_UTC]), 'Historico'[Índice] = IndexEncontrado)
+			VAR Hora = CALCULATE(SELECTEDVALUE('Historico'[Hora_UTC]), 'Historico'[Índice] = IndexEncontrado) // <-- Asegúrate de que esta línea esté presente
+			VAR Latitud = CALCULATE(SELECTEDVALUE('Historico'[Latitud]), 'Historico'[Índice] = IndexEncontrado)
+			VAR Longitud = CALCULATE(SELECTEDVALUE('Historico'[Longitud]), 'Historico'[Índice] = IndexEncontrado)
+			VAR Profundidad = CALCULATE(SELECTEDVALUE('Historico'[Profundidad_km]), 'Historico'[Índice] = IndexEncontrado)
+			VAR Magnitud = CALCULATE(SELECTEDVALUE('Historico'[Magnitud]), 'Historico'[Índice] = IndexEncontrado)
+			VAR TipoMagnitud = CALCULATE(SELECTEDVALUE('Historico'[Tipo_Magnitud]), 'Historico'[Índice] = IndexEncontrado)
+			RETURN
+			    "Fecha: " & FORMAT(Fecha, "dd/mm/yyyy") & UNICHAR(10) &
+			    "Hora: " & FORMAT(Hora, "hh:mm:ss") & UNICHAR(10) & // <-- Asegúrate de que esta línea esté presente
+			    "Latitud: " & FORMAT(Latitud, "0.00") & UNICHAR(10) &
+			    "Longitud: " & FORMAT(Longitud, "0.00") & UNICHAR(10) &
+			    "Profundidad: " & FORMAT(Profundidad, "0") & " km" & UNICHAR(10) &
+			    "Magnitud: " & FORMAT(Magnitud, "0.0") & " " & TipoMagnitud
+		lineageTag: 67d8ebcd-41bd-4ee4-a85b-f9df33a89e4f
+
+	measure 'Duracion Total Eventos (segundos)' = SUM(datos_eventos_detectados[Duracion_Evento_s])
+		formatString: 0
+		lineageTag: de3776bd-e636-4680-9873-905f46a2c2e6
 
 	column Fecha_UTC
 		dataType: dateTime
@@ -82,14 +105,6 @@ table Historico
 
 		annotation SummarizationSetBy = Automatic
 
-	column Id_Evento
-		dataType: string
-		lineageTag: 6a4d490f-3776-4e20-96d9-1ad6b1865b3c
-		summarizeBy: none
-		sourceColumn: Id_Evento
-
-		annotation SummarizationSetBy = Automatic
-
 	column Índice
 		dataType: int64
 		formatString: 0
@@ -98,6 +113,14 @@ table Historico
 		sourceColumn: Índice
 
 		annotation SummarizationSetBy = User
+
+	column 'FECHA Y HORA'
+		dataType: string
+		lineageTag: f84c2dd2-e8d0-4e9c-9ce5-f32b73657420
+		summarizeBy: none
+		sourceColumn: FECHA Y HORA
+
+		annotation SummarizationSetBy = Automatic
 
 	partition Historico = m
 		mode: import
@@ -184,9 +207,12 @@ table Historico
 				        {"Longitud", each _, type number},  // Ya está correcto
 				        {"Magnitud", each _, type number}   // Ya está correcto
 				    }),
-				    #"Índice agregado" = Table.AddIndexColumn(ValoresRedondeados, "Índice", 1, 1, Int64.Type)
+				    #"Índice agregado" = Table.AddIndexColumn(ValoresRedondeados, "Índice", 1, 1, Int64.Type),
+				    #"Columnas quitadas" = Table.RemoveColumns(#"Índice agregado",{"Id_Evento"}),
+				    #"Columna combinada insertada" = Table.AddColumn(#"Columnas quitadas", "FECHA Y HORA", each Text.Combine({Text.From([Fecha_UTC], "es-AR"), Text.From([Hora_UTC], "es-AR")}, " "), type text),
+				    #"Filas en blanco eliminadas" = Table.SelectRows(#"Columna combinada insertada", each not List.IsEmpty(List.RemoveMatchingItems(Record.FieldValues(_), {"", null})))
 				in
-				    #"Índice agregado"
+				    #"Filas en blanco eliminadas"
 				```
 
 	annotation PBI_NavigationStepName = Navegación
