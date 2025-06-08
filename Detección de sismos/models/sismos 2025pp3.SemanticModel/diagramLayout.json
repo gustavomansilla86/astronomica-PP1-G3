@@ -32,19 +32,6 @@
             "width": 234
           },
           "zIndex": 0
-        },
-        {
-          "location": {
-            "x": 568,
-            "y": 0
-          },
-          "nodeIndex": "datos_eventos_detectados",
-          "nodeLineageTag": "c6c74fb7-32b6-493f-b72c-80acfd0adf25",
-          "size": {
-            "height": 300,
-            "width": 234
-          },
-          "zIndex": 0
         }
       ],
       "name": "Todas las tablas",

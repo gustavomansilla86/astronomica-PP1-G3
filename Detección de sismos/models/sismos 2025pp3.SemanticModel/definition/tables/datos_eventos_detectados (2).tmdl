@@ -42,12 +42,15 @@ table 'datos_eventos_detectados (2)'
 		annotation SummarizationSetBy = Automatic
 
 	column Hora_Inicio_Evento
-		dataType: string
+		dataType: dateTime
+		formatString: Long Time
 		lineageTag: 70484f03-c9bf-4f0b-9f01-9f3206d4cbc0
 		summarizeBy: none
 		sourceColumn: Hora_Inicio_Evento
 
 		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Time
 
 	column Hora_Fin_Evento
 		dataType: string
@@ -86,9 +89,10 @@ table 'datos_eventos_detectados (2)'
 		source =
 				let
 				    Origen = Csv.Document(File.Contents("F:\gustavo\Desktop\PracticasProfecionalizantes_1_2025\datos_eventos_detectados.csv"),[Delimiter=",", Columns=10, Encoding=65001, QuoteStyle=QuoteStyle.None]),
-				    #"Encabezados promovidos" = Table.PromoteHeaders(Origen, [PromoteAllScalars=true])
+				    #"Encabezados promovidos" = Table.PromoteHeaders(Origen, [PromoteAllScalars=true]),
+				    #"Tipo cambiado" = Table.TransformColumnTypes(#"Encabezados promovidos",{{"Hora_Inicio_Evento", type time}})
 				in
-				    #"Encabezados promovidos"
+				    #"Tipo cambiado"
 
 	annotation PBI_NavigationStepName = Navegación
 

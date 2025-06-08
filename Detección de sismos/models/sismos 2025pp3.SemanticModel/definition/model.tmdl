@@ -12,15 +12,12 @@ annotation PBIDesktopVersion = 2.143.1378.0 (25.05)+4e1de9c957866bc5336e0d250838
 
 annotation __PBI_TimeIntelligenceEnabled = 1
 
-annotation PBI_QueryOrder = ["datos_eventos_detectados (2)","Historico","datos_eventos_detectados"]
+annotation PBI_QueryOrder = ["datos_eventos_detectados (2)","Historico"]
 
 ref table 'datos_eventos_detectados (2)'
 ref table Historico
-ref table DateTableTemplate_882dc378-f864-439b-9be8-5467ccc7d7b6
-ref table LocalDateTable_cf7b02b4-4344-437f-ad6b-4d09070cf857
-ref table datos_eventos_detectados
-ref table LocalDateTable_a911268e-2867-4688-99d9-c31b725e959c
-ref table LocalDateTable_40bf73de-f960-47b6-9aa1-7237fac38e09
+ref table DateTableTemplate_cec95c77-a741-49fa-8bea-f688bb86af80
+ref table LocalDateTable_6be32d23-f54c-470e-9bb8-e51dba9f9df6
 
 ref cultureInfo es-AR
 
