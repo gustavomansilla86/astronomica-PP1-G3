@@ -44,13 +44,17 @@ table datos_eventos_detectados
 		annotation UnderlyingDateTimeDataType = Time
 
 	column Duracion_Evento_s
-		dataType: int64
-		formatString: 0
+		dataType: dateTime
+		formatString: Short Time
 		lineageTag: 35f1e98d-3e56-4aec-a00c-f468f49f30d6
-		summarizeBy: sum
+		summarizeBy: none
 		sourceColumn: Duracion_Evento_s
 
+		changedProperty = DataType
+
 		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Time
 
 	column Max_Amplitud_Filtrada
 		dataType: int64
